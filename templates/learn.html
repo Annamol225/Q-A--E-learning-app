@@ -1,0 +1,32 @@
+ {% extends "base.html" %}
+ {% block body %}
+ {% load static %}
+  <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>Syllabus</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+                       <nav class="header__menu">
+                        <ul style="padding-bottom:2px;">
+                         {% for sub in sub_obj %}
+            <li><a href="{% url 'indo' sub.id %}">{{ sub.sub_name }}</a></li>
+          {% endfor %}
+                        </ul>
+                    </nav>
+                        </div>
+                    </div>
+                    <div class="hero__item set-bg" data-setbg="{% static  'aa/img/qa6.jpg' %}">
+                        <div class="hero__text">
+                            <span>FRUIT FRESH</span>
+                            <h2>Q&A </h2>
+                            <p>Chous any Language and Start learning</p>
+                        </div>
+                    </div> 
+</div>
+ {% endblock body %}

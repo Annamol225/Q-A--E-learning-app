@@ -1,0 +1,42 @@
+   {% extends "base.html" %}
+ {% block body %}
+ {% load static %}
+ <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>Syllabus</span>
+                        </div>
+
+                       <ul>     
+                       {% comment %} {% for i in s  %}     
+                            <li> <a href="{% url 'qa1' i.id %}">{{i.sy_list}}</a></li>
+                           {% endfor %}  {% endcomment %}
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9"> <div class="hero__search">
+                        <div class="hero__search__form">
+                       <nav class="header__menu">
+                        <ul style="padding-bottom:2px;">
+                         {% for sub in su %}
+            <li><a href="{% url 'indo' sub.id %}">{{ sub.sub_name }}</a></li>
+          {% endfor %}
+                        </ul>
+                    </nav>
+                        </div>
+                    </div>
+                    <div class="section-title">
+                        <h2>{{qa.0.sub_name}}</h2>
+                    </div>
+                    <div class="featured__controls">
+                    </div>
+                    {% for i in qa %}
+                    <h4><b>Question :</b></h4><p style="padding-left: 60px;">
+                        {{i.qust}}</p>
+                        <h4><b>Answer :</b></h4><p style="padding-left: 60px;"> &nbsp; &nbsp; &nbsp; &nbsp;  {{i.ans}} </p>
+                    <br><br>
+                    {% endfor%}
+                </div>
+{% endblock body %}

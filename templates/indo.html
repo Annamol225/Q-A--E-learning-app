@@ -1,0 +1,56 @@
+   {% extends "base.html" %}
+    {% load static %}
+
+ {% block body %}
+            
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>Syllabus</span>
+                        </div>
+
+                       <ul>
+                       
+                            {% for i in sy %}                
+                            <li><a href="{% url 'qa1' i.id %}">{{i.sy_list}} </a></li>
+                            {% endfor %}  
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                 <div class="hero__search">
+                        <div class="hero__search__form">
+                       <nav class="header__menu">
+                        <ul style="padding-bottom:2px;">
+                         {% for i in sub %}
+            <li><a href="{% url 'indo1' i.id %}">{{ i.sub_name }}</a></li>
+          {% endfor %}
+                        </ul>
+                    </nav>
+
+                        </div>
+                    </div>
+                    <div class="hero__item set-bg" data-setbg="{{sub_obj.img1.url}}">
+                        <div class="hero__text">
+                            <span>Q&A</span>
+                            <h2>{{sub_obj.sub_name}}</h2>
+                            <p>Start learning in {{sub_obj.sub_name}} </p>
+
+                        </div>
+                    </div>
+                    
+                    <div class="section-title">
+                        <h2>Introduction</h2>
+                    </div>
+                    <div class="featured__controls">
+                    </div>
+                    <p style="padding-left: 40px;">
+                      {{sub_obj.indo}}  </p>
+                        
+                
+                </div>
+            
+
+{% endblock body %}
